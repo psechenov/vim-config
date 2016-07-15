@@ -182,7 +182,8 @@ colorscheme Tomorrow-Night2
 "====================Start Hot Keys Section ==========================
 
 " VDebug hot keys
-
+" http://docs.activestate.com/komodo/4.4/debugpython.html
+" python -S ~/py_dev/Komodo-PythonRemoteDebugging-10.0.1-89237-linux-x86_64/py3_dbgp.py -d 127.0.0.1:9000 ~/python_test/project_test/test.py
 "map <C-b> :Breakpoint<CR>
 "map <F10> :VdebugCommandStepOver<CR>
 "map <F11> :VdebugCommandStepIn<CR>
@@ -190,14 +191,14 @@ colorscheme Tomorrow-Night2
 "map <F4> :VdebugCommandRunToCursor<CR>
 "map <F5> :VdebugStart<CR>
 
-"let g:vdebug_keymap = {}
-"let g:vdebug_keymap_defaults = {"set_breakpoint" : "<C-b>"}
-"let g:vdebug_keymap= {"set_breakpoint" : "<C-b>"}
-"let g:vdebug_keymap = {"step_over" : "<C-J>"}
-"let g:vdebug_keymap = {'step_into' : '<F11>'}
-"let g:vdebug_keymap = {'step_out' : '<C-F11>'}
-"let g:vdebug_keymap = {'run' : '<F5>'}
-"let g:vdebug_keymap = {'close' : '<S-F5>'}
+let g:vdebug_keymap = {
+			\'set_breakpoint' : '<C-b>',
+			\'step_over' : "<F10>",
+			\'step_into' : '<F11>',
+			\'step_out' : '<S-F11>',
+			\'run' : '<F5>',
+			\'close' : '<S-F5>'
+			\}
 
 nnoremap <buffer> <F5> :wa<CR> :VdebugStart<CR>
 
