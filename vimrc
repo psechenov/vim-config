@@ -26,6 +26,9 @@ Plugin 'nvie/vim-flake8'  " PEP8 support
 Plugin 'scrooloose/nerdtree'
 " Plugin 'jistr/vim-nerdtree-tabs'
 
+" html css
+Plugin 'mattn/emmet-vim'
+
 
 call vundle#end() " required
 filetype on
@@ -192,21 +195,23 @@ colorscheme Tomorrow-Night2
 "map <F4> :VdebugCommandRunToCursor<CR>
 "map <F5> :VdebugStart<CR>
 
+
 let g:vdebug_keymap = {
 			\'set_breakpoint' : '<C-b>',
 			\'step_over' : "<F10>",
 			\'step_into' : '<F11>',
 			\'step_out' : '<S-F11>',
 			\'run' : '<F5>',
-			\'close' : '<S-F5>'
+			\'close' : '<S-F5>',
+			\'eval_under_cursor' : '<leader>E'
 			\}
+" ConqueTerm
+" run interpreter by Ctrl-F5
+nnoremap <F4> :wa<CR> :ConqueTermSplit ipython<CR>
 
 nnoremap <buffer> <F5> :wa<CR> :VdebugStart<CR>
 
-" ConqueTerm
-" run interpreter by Ctrl-F5
-nnoremap <C-F5> :wa<CR> :ConqueTermSplit ipython<CR>
-"nnoremap <buffer> <C-F5> :w<CR> :exec '!python' shellescape(@%, 1)<cr>
+" nnoremap <buffer> <C-F5> :w<CR> :exec '!python' shellescape(@%, 1)<cr>
 
 " а debug-mode на Ctrl <F6>
 " nnoremap <C-F6> :exe "ConqueTermSplit ipython " . expand("%")<CR>
