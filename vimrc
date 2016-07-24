@@ -125,6 +125,7 @@ set backspace=indent,eol,start
 " let mapleader = ","
 
 " Jedi-vim
+let g:jedi#completions_enabled = 1
 let g:jedi#show_call_signatures = 0 " Show call signatures
 let g:jedi#popup_on_dot = 0         " Enable autocomplete on dot
 let g:jedi#popup_select_first = 0 " Disable first select from auto-complete
