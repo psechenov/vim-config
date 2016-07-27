@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 
 " Plugin 'klen/python-mode'
-" Plugin 'Valloric/YouCompleteMe' " autocompleter
+Plugin 'Valloric/YouCompleteMe' " autocompleter
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -75,6 +75,10 @@ set backspace=indent,eol,start
 " nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
+"----------------CPP syntax --------------------
+au BufNewFile,BufReadPost *.cpp,*.cxx,*.c,*.h,*.hpp set filetype=cpp
+"--------------End CPP syntax-------------------
+
 " =====================================================
 " Python-mode settings
 " =====================================================
@@ -116,6 +120,7 @@ set backspace=indent,eol,start
 " let g:pymode_syntax_all = 1
 " let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 " let g:pymode_syntax_space_errors = g:pymode_syntax_all
+"
 
 " Don't autofold code
 " let g:pymode_folding = 0
@@ -125,7 +130,7 @@ set backspace=indent,eol,start
 " ====================================================
 " ====================================================
 
-" let mapleader = ","
+let mapleader = ","
 
 " Jedi-vim
 let g:jedi#show_call_signatures = 0 " Show call signatures
@@ -137,7 +142,6 @@ set completeopt=menuone,longest " don't show preview win
 " Powerline
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2 " always show statys line
-set t_Co=256
 
 let g:SimpylFold_docstring_preview = 1
 
@@ -146,6 +150,7 @@ let g:SimpylFold_docstring_preview = 1
 " let g:ycm_auto_trigger=0
 " let g:ycm_complete_in_strings=0
 " let g:ycm_min_num_of_chars_for_completion=0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "custom keys
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -172,6 +177,7 @@ EOF
 
 " omnicomplete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp,*c set omnifunc=omni#cpp#complete#Main
 
 " ============= Colors ====================
 "syntax enable
@@ -206,7 +212,8 @@ let g:vdebug_keymap = {
 			\}
 " ConqueTerm
 " run interpreter by Ctrl-F5
-nnoremap <F4> :wa<CR> :ConqueTermSplit ipython<CR>
+nnoremap <C-F5> :wa<CR> :ConqueTermSplit ipython<CR>
+nnoremap <F4> :sp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 nnoremap <buffer> <F5> :wa<CR> :VdebugStart<CR>
 
@@ -262,7 +269,7 @@ nnoremap <M-[> :vertical resize +5<cr>
 nnoremap <M-]> :vertical resize -5<cr>
 
 " Activate autocomplete at <Ctrl+Space>
-inoremap <C-space> <C-x><C-o>
+" inoremap <C-space> <C-x><C-o>
 
 " Tab in normal mode - switch panels
 nnoremap <Tab> <C-w><C-w>
