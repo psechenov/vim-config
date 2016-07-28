@@ -36,3 +36,10 @@ let c_comment_strings=1
 " Load up the doxygen syntax
 let g:load_doxygen_syntax=1
 
+"----------------CPP syntax --------------------
+highlight BadWhitespace ctermbg=red guibg=red
+au BufNewFile *.cpp,*.hpp,*.cxx,*.c,*.h set fileformat=unix
+au BufRead,BufNewFile *cpp,*hpp,*.cxx,*.c,*.h match BadWhitespace /\s\+$/
+"--------------End CPP syntax-------------------
+
+
