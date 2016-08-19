@@ -10,7 +10,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 
-Plugin 'Valloric/YouCompleteMe' " autocompleter
+" Plugin 'Valloric/YouCompleteMe' " autocompleter
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
@@ -22,6 +22,16 @@ filetype on
 filetype plugin on
 filetype plugin indent on " required
 filetype indent on        " Keep indentation level from previous line
+
+" Send more characters for redraws
+" set ttyfast
+
+" Enable mouse use in all modes
+" set mouse=a
+
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+" set ttymouse=xterm2
 
 set nu                          " turn on numbering
 set noswapfile                  " I don't like swap files
@@ -72,6 +82,7 @@ vnoremap > >gv " Shift+< keys
 
 " Backspace in Visual mode deletes selection
 vnoremap <BS> d
+nnoremap <BS> X
 
 " CTRL-Z is Undo
 noremap <C-z> u
@@ -112,15 +123,23 @@ nnoremap <M-]> :vertical resize -5<cr>
 " Activate autocomplete at <Ctrl+Space>
 " inoremap <C-space> <C-x><C-o>
 
+" Copy word under cursor
+map <C-S-c> byw
+
 " Tab in normal mode - switch panels
 nnoremap <Tab> <C-w><C-w>
+map  <S-Tab> :tabn<CR>
+map  <C-Tab> :tabp<CR>
 
 " Disable Vim standart F1 help
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>
 
 " Close window by Ctrl-w
-nnoremap <C-w> :q<CR>
+" nnoremap <C-w> :q<CR>
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " NERDTree
 map <F1> :NERDTreeToggle<CR>  " browse the list of files in the current directory
