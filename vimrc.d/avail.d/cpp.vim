@@ -9,6 +9,6 @@ let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
 let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly
 
 
-map <buffer> <C-B> :wa<CR> :make!<CR>
+map <C-B> :wa<CR>:make!<CR>
 nnoremap <F4> :sp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 nnoremap <F5> :ConqueGdb<CR>

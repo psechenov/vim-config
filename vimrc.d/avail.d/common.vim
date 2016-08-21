@@ -41,6 +41,7 @@ set encoding=utf-8              " Set the default file encoding to UTF-8
 set ruler                       " show line and column number
 set showcmd 			" show (partial) command in status line
 set completeopt=menuone,longest " don't show preview win
+set tw=0                        " stop automatic wrapping
 syntax on
 
 " au BufNewFile,BufReadPost *.cpp,*.hpp,*.cxx,*.c,*.h set filetype=cpp
@@ -80,9 +81,18 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 vnoremap < <gv " Shift+> keys
 vnoremap > >gv " Shift+< keys
 
+" Delete word
+nnoremap <C-D> "_diw
+
+" Delete in normal mode
+nnoremap <Del> i<Del><esc>l
+
 " Backspace in Visual mode deletes selection
 vnoremap <BS> d
 nnoremap <BS> X
+
+" Space in normal mode
+nnoremap <space> i<space><esc>
 
 " CTRL-Z is Undo
 noremap <C-z> u
@@ -128,8 +138,8 @@ map <C-S-c> byw
 
 " Tab in normal mode - switch panels
 nnoremap <Tab> <C-w><C-w>
-map  <S-Tab> :tabn<CR>
-map  <C-Tab> :tabp<CR>
+nmap  <C-Tab> :tabn<CR>
+nmap  <S-Tab> :tabp<CR>
 
 " Disable Vim standart F1 help
 nmap <F1> :echo<CR>
