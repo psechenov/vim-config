@@ -10,10 +10,14 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 
-" Plugin 'Valloric/YouCompleteMe' " autocompleter
+Plugin 'Valloric/YouCompleteMe' " autocompleter
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'vim-scripts/vimprj'
+Plugin 'vim-scripts/DfrankUtil'
+Plugin 'vim-scripts/indexer.tar.gz'
 " Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end() " required
