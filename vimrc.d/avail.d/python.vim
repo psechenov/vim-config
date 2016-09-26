@@ -66,6 +66,8 @@ Plugin 'nvie/vim-flake8'  " PEP8 support
 "let g:jedi#popup_select_first = 0 " Disable first select from auto-complete
 "let g:jedi#rename_command = "<leader>r"
 
+" Flake8
+autocmd BufWritePost *.py call Flake8()
 
 " python with virtualenv support
 py << EOF

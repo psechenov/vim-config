@@ -46,6 +46,7 @@ set ruler                       " show line and column number
 set showcmd 			" show (partial) command in status line
 set completeopt=menuone,longest " don't show preview win
 set tw=0                        " stop automatic wrapping
+set viminfo-=:1000              " vim history size
 syntax on
 
 " au BufNewFile,BufReadPost *.cpp,*.hpp,*.cxx,*.c,*.h set filetype=cpp
@@ -60,7 +61,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_auto_trigger=0
 let g:ycm_complete_in_strings=0
 let g:ycm_min_num_of_chars_for_completion=0
-let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files=1
 
 " NERD
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
