@@ -46,7 +46,7 @@ set ruler                       " show line and column number
 set showcmd 			" show (partial) command in status line
 set completeopt=menuone,longest " don't show preview win
 set tw=0                        " stop automatic wrapping
-set viminfo-=:1000              " vim history size
+set history=1000                " vim history size
 syntax on
 
 " au BufNewFile,BufReadPost *.cpp,*.hpp,*.cxx,*.c,*.h set filetype=cpp

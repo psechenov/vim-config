@@ -1,0 +1,8 @@
+[ocr-lib]
+/home/ps/code/circleback/ocr-lib/ocr-lib/src
+/home/ps/code/circleback/ocr-lib/ocr-lib-app/src
+option:ctags_params = "--languages=c++"
+
+[ocr-lib-old]
+/home/ps/code/circleback_/scanbizcards-ios/submodules/scanbizcardslib
+option:ctags_params = "--languages=c++"

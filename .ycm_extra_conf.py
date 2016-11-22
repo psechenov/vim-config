@@ -8,12 +8,12 @@ BASE_FLAGS = [
     '-Wall',
     '-Wextra',
     '-Werror',
-    '-Wno-long-long',
-    '-Wno-variadic-macros',
+    # '-Wno-long-long',
+    # '-Wno-variadic-macros',
     '-fexceptions',
     '-ferror-limit=10000',
     '-DNDEBUG',
-    '-std=c++11',
+    '-std=c++14',
     '-xc++',
     '-I/usr/lib/'
     '-I/usr/include/'
