@@ -1,5 +1,6 @@
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'helino/vim-nasm'
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
@@ -16,3 +17,5 @@ let g:cpp_experimental_template_highlight = 1 " not very good one
 map <C-B> :wa<CR>:!make<CR>
 nnoremap <F4> :sp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 nnoremap <F5> :ConqueGdb<CR>
+
+au BufRead,BufNewFile *.s,*.nasm set filetype=nasm
